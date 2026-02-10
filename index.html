@@ -7,227 +7,227 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#DA291C">
 <style>
-:raiz {
-  --cor-primária: #FFCC00;
-  --cor-secundária: #DA291C;
+:root {
+  --color-primary: #FFCC00;
+  --color-secondary: #DA291C;
   --bg: #fff;
-  --fonte: 'Inter', sem serifa;
+  --font: 'Inter', sans-serif;
 }
-corpo {
-  margem:0;
-  família-fonte:var(--fonte);
-  fundo:var(--bg);
-  cor: #333;
+body {
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:#333;
 }
-cabeçalho {
-  fundo:var(--color-secondary);
-  cor:#fff;
-  preenchimento:12px;
-  exibição:flex;
+header {
+  background:var(--color-secondary);
+  color:#fff;
+  padding:12px;
+  display:flex;
   justify-content:space-between;
-  alinhar-itens:centro;
-  seleção do usuário:nenhum;
+  align-items:center;
+  user-select:none;
 }
-cabeçalho h1 {
-  margem:0;
-  tamanho da fonte: 1,2rem;
-  peso da fonte:negrito;
+header h1 {
+  margin:0;
+  font-size:1.2rem;
+  font-weight:bold;
 }
-botão {
-  preenchimento: 8px 16px;
-  margem:4px 2px;
-  borda:nenhuma;
-  raio-da-borda:24px;
-  cursor:ponteiro;
-  peso da fonte: 600;
-  transição: todos os 0,2s de entrada e saída suaves;
+button {
+  padding:8px 16px;
+  margin:4px 2px;
+  border:none;
+  border-radius:24px;
+  cursor:pointer;
+  font-weight:600;
+  transition:all 0.2s ease-in-out;
 }
-botão:passar o mouse {
-  transformar:translateY(-1px);
+button:hover {
+  transform:translateY(-1px);
   box-shadow:0 2px 4px rgba(0,0,0,0.2);
 }
 .btn-primary {background:var(--color-primary);color:#000;}
 .btn-secondary {background:var(--color-secondary);color:#fff;}
 .btn-ghost {background:transparent;color:var(--color-secondary);border:1px solid var(--color-secondary);}
 .btn-danger {background:#e53e3e;color:#fff;}
-.campo-de-entrada {
-  largura:calc(100% - 16px);
-  preenchimento:8px;
-  margem:4px 0;
-  borda:1px sólida #ccc;
-  raio-da-borda:8px;
+.input-field {
+  width:calc(100% - 16px);
+  padding:8px;
+  margin:4px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
 }
 .card-item {
-  borda:1px sólida #ddd;
-  raio-da-borda:8px;
-  overflow:oculto;
-  exibição:flex;
+  border:1px solid #ddd;
+  border-radius:8px;
+  overflow:hidden;
+  display:flex;
   flex-direction:column;
-  cursor:ponteiro;
-  transição:transformar 0,2s;
+  cursor:pointer;
+  transition:transform 0.2s;
 }
 .card-item:hover {transform:scale(1.02);}
 .card-item .thumb img {
-  largura: 100%;
-  altura: 120px;
-  ajuste-objeto:cobertura;
+  width:100%;
+  height:120px;
+  object-fit:cover;
 }
-.gaveta {
-  posição: fixa;
-  topo:0;
-  direita:-320px;
-  largura: 320px;
-  altura: 100%;
-  fundo:#fff;
+.drawer {
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:320px;
+  height:100%;
+  background:#fff;
   box-shadow:-2px 0 8px rgba(0,0,0,.3);
-  transição: 0,3s;
-  preenchimento:12px;
+  transition:0.3s;
+  padding:12px;
   overflow-y:auto;
-  Índice z: 100;
+  z-index:100;
 }
-.gaveta.abrir {direita:0;}
-.tela {
-  preenchimento:12px;
-  exibir:nenhum;
+.drawer.open {right:0;}
+.screen {
+  padding:12px;
+  display:none;
 }
 .screen.active {
-  exibir:bloco;
+  display:block;
 }
 .small {font-size:0.75rem;color:#555;}
 .kv {font-size:0.7rem;color:#999;}
 .hr {border-top:1px solid #ccc;margin:6px 0;}
 #cartFab {
-  posição: fixa;
-  inferior:16px;
-  direita:16px;
-  fundo:var(--color-primary);
-  raio-da-borda:50%;
-  largura: 56px;
-  altura:56px;
-  exibição:flex;
-  alinhar-itens:centro;
-  justificar-conteúdo:centro;
-  cursor:ponteiro;
+  position:fixed;
+  bottom:16px;
+  right:16px;
+  background:var(--color-primary);
+  border-radius:50%;
+  width:56px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
   box-shadow:0 2px 6px rgba(0,0,0,0.3);
-  índice z: 90;
+  z-index:90;
 }
-#contagemdecarrinhos {
-  posição:absoluta;
-  topo:-4px;
-  direita:-4px;
-  fundo:vermelho;
-  cor:#fff;
-  raio-da-borda:50%;
-  largura: 20px;
-  altura: 20px;
-  tamanho da fonte: 0,7rem;
-  exibição:flex;
-  alinhar-itens:centro;
-  justificar-conteúdo:centro;
+#cartCount {
+  position:absolute;
+  top:-4px;
+  right:-4px;
+  background:red;
+  color:#fff;
+  border-radius:50%;
+  width:20px;
+  height:20px;
+  font-size:0.7rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .tabs-container {
-  exibição:flex;
-  espaço:8px;
+  display:flex;
+  gap:8px;
   flex-wrap:wrap;
-  margem-inferior:12px;
+  margin-bottom:12px;
 }
 .tab-btn {
-  preenchimento: 8px 16px;
-  raio-da-borda:24px;
-  cursor:ponteiro;
-  fundo:#eee;
+  padding:8px 16px;
+  border-radius:24px;
+  cursor:pointer;
+  background:#eee;
 }
 .tab-btn.active {
-  fundo:var(--color-secondary);
-  cor:#fff;
+  background:var(--color-secondary);
+  color:#fff;
 }
 .tab-content {display:none;}
 .tab-content.active {display:block;}
 .table-data {
-  largura: 100%;
-  colapso de borda:colapso;
-  tamanho da fonte: 0,8rem;
-  alinhamento de texto:esquerda;
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.8rem;
+  text-align:left;
 }
 .table-data th, .table-data td {
-  borda:1px sólida #ccc;
-  preenchimento:6px;
+  border:1px solid #ccc;
+  padding:6px;
 }
 .table-data th {
-  fundo:#f0f0f0;
+  background:#f0f0f0;
 }
-.brinde {
-  posição: fixa;
-  topo:20px;
-  Restante: 50%;
-  transformar:translateX(-50%);
-  preenchimento: 12px 24px;
-  fundo:rgba(0,0,0,0.8);
-  cor:#fff;
-  raio-da-borda:24px;
-  índice z: 1000;
-  opacidade: 0;
-  transição:opacidade 0,3s entrada e saída suaves;
-  eventos-ponteiro:nenhum;
+.toast {
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:12px 24px;
+  background:rgba(0,0,0,0.8);
+  color:#fff;
+  border-radius:24px;
+  z-index:1000;
+  opacity:0;
+  transition:opacity 0.3s ease-in-out;
+  pointer-events:none;
 }
 .toast.show {
-  opacidade: 1;
+  opacity:1;
 }
 .toggle-switch {
-  posição: relativa;
-  exibição: inline-block;
-  largura: 44px;
-  altura: 24px;
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
 }
 .toggle-switch input {
-  opacidade: 0;
-  largura: 0;
-  altura: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .slider {
-  posição: absoluta;
-  cursor: ponteiro;
-  topo: 0;
-  esquerda: 0;
-  direita: 0;
-  parte inferior: 0;
-  cor de fundo: #ccc;
-  transição: 0,4s;
-  raio da borda: 24px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
 }
 .slider:before {
-  posição: absoluta;
-  contente: "";
-  altura: 16px;
-  largura: 16px;
-  esquerda: 4px;
-  parte inferior: 4px;
-  cor de fundo: branca;
-  transição: 0,4s;
-  raio-da-borda: 50%;
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
 }
 input:checked + .slider {
-  cor de fundo: #4CAF50;
+  background-color: #4CAF50;
 }
 input:checked + .slider:before {
-  transformar: traduzirX(20px);
+  transform: translateX(20px);
 }
-.filtrar-abas {
-  Exibir: flexível;
-  espaçamento: 8px;
-  overflow-x: automático;
-  preenchimento: 8px 0;
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
 }
-.filtrar-tab {
-  espaço em branco: nowrap;
-  preenchimento: 8px 12px;
-  fundo: #f0f0f0;
-  raio da borda: 24px;
-  cursor: ponteiro;
+.filter-tab {
+  white-space: nowrap;
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border-radius: 24px;
+  cursor: pointer;
 }
 .filter-tab.active {
-  fundo: var(--color-secondary);
-  cor: #fff;
+  background: var(--color-secondary);
+  color: #fff;
 }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -241,9 +241,9 @@ input:checked + .slider:before {
   <div id="userInfo"></div>
 </header>
 
-<principal>
+<main>
   <div id="loginScreen" class="screen active">
-    <h2>Entrar</h2>
+    <h2>Login</h2>
     <p class="small">Use 'DEVGUI' (admin) ou 'DEMO' (acesso restrito) com a senha 'DEMO'.</p>
     <input type="text" id="loginKey" placeholder="Key" class="input-field">
     <input type="password" id="loginPass" placeholder="Senha" class="input-field">
@@ -254,7 +254,7 @@ input:checked + .slider:before {
 
   <div id="totemScreen" class="screen">
     <div style="display:flex;justify-content:space-between;align-items:center;">
-      <h2 style="margin:0;">Cardápio</h2>
+      <h2 style="margin:0;">CardÃ¡pio</h2>
       <button class="btn-ghost" onclick="toAdminPanel()" id="manageBtn" style="display:none;">Gerenciar</button>
     </div>
     <div id="categoryTabs" class="filter-tabs"></div>
@@ -264,7 +264,7 @@ input:checked + .slider:before {
 
   <div id="adminScreen" class="screen">
     <div style="display:flex;justify-content:space-between;align-items:center;">
-      <h2 style="margin:0;">Painel de controle</h2>
+      <h2 style="margin:0;">Dashboard</h2>
       <button class="btn-ghost" onclick="toTotem()">Totem</button>
     </div>
     <div class="tabs-container" id="adminTabs"></div>
@@ -279,9 +279,9 @@ input:checked + .slider:before {
       <form id="prodForm">
         <input type="hidden" id="prodId">
         <input type="text" id="prodName" placeholder="Nome" class="input-field" required>
-        <input type="number" id="prodPrice" placeholder="Preço" class="input-field" step="0.01" required>
+        <input type="number" id="prodPrice" placeholder="PreÃ§o" class="input-field" step="0.01" required>
         <div style="margin: 8px 0;">
-            <input type="checkbox" id="isComboToggle" onchange="toggleComboFields()"> É um Combo?
+            <input type="checkbox" id="isComboToggle" onchange="toggleComboFields()"> Ã‰ um Combo?
         </div>
         <div id="nonComboFields">
           <input type="text" id="prodCat" placeholder="Categoria" class="input-field">
@@ -291,22 +291,22 @@ input:checked + .slider:before {
         <div id="comboFields" style="display:none;">
           <input type="text" id="comboItems" placeholder="IDs dos Itens do Combo (ex: id1,id2)" class="input-field">
           <div style="margin: 8px 0;">
-            <input type="checkbox" id="isPromotionalToggle" onchange="togglePromoOptions()"> É promocional?
+            <input type="checkbox" id="isPromotionalToggle" onchange="togglePromoOptions()"> Ã‰ promocional?
           </div>
           <div id="promoOptions" style="display: none;">
-            <label class="small">Opções de Promoção:</label><br>
+            <label class="small">OpÃ§Ãµes de PromoÃ§Ã£o:</label><br>
             <input type="radio" id="promoType1" name="promoType" value="mais-caro" checked onchange="updatePromoPrice()">
             <label for="promoType1" class="small">Pagar apenas o produto mais caro</label><br>
             <input type="radio" id="promoType2" name="promoType" value="preco-fixo" onchange="updatePromoPrice()">
-            <label for="promoType2" class="small">Escolher um preço para o combo</label><br>
+            <label for="promoType2" class="small">Escolher um preÃ§o para o combo</label><br>
           </div>
           <label class="small">Validade (em dias):</label>
-          <input type="number" id="promoValidity" placeholder="Valor (dias)" class="input-field" value="0">
+          <input type="number" id="promoValidity" placeholder="Validade (dias)" class="input-field" value="0">
         </div>
         <input type="text" id="prodImg" placeholder="URL da imagem" class="input-field">
         <button type="submit" class="btn-primary">Salvar</button>
         <button type="button" class="btn-ghost" onclick="resetForm('prodForm')">Limpar</button>
-      </formulário>
+      </form>
       <hr class="hr">
       <table class="table-data" id="prodTable"></table>
     </div>
@@ -318,7 +318,7 @@ input:checked + .slider:before {
         <input type="tel" id="personPhone" placeholder="Telefone" class="input-field">
         <button type="submit" class="btn-primary">Salvar</button>
         <button type="button" class="btn-ghost" onclick="resetForm('personForm')">Limpar</button>
-      </formulário>
+      </form>
       <hr class="hr">
       <table class="table-data" id="peopleTable"></table>
     </div>
@@ -326,11 +326,11 @@ input:checked + .slider:before {
       <h3>Gerenciar Cupons</h3>
       <form id="couponForm">
         <input type="hidden" id="couponId">
-        <input type="text" id="couponCode" placeholder="Código" class="input-field">
+        <input type="text" id="couponCode" placeholder="CÃ³digo" class="input-field">
         <input type="number" id="couponValue" placeholder="Valor (R$)" class="input-field" step="0.01">
         <button type="submit" class="btn-primary">Salvar</button>
         <button type="button" class="btn-ghost" onclick="resetForm('couponForm')">Limpar</button>
-      </formulário>
+      </form>
       <hr class="hr">
       <table class="table-data" id="couponsTable"></table>
     </div>
@@ -338,15 +338,15 @@ input:checked + .slider:before {
       <h3>Gerenciar Publicidade</h3>
       <form id="adsForm">
         <input type="hidden" id="adsId">
-        <input type="text" id="adsContent" placeholder="Conteúdo do anúncio" class="input-field">
+        <input type="text" id="adsContent" placeholder="ConteÃºdo do anÃºncio" class="input-field">
         <button type="submit" class="btn-primary">Salvar</button>
         <button type="button" class="btn-ghost" onclick="resetForm('adsForm')">Limpar</button>
-      </formulário>
+      </form>
       <hr class="hr">
       <table class="table-data" id="adsTable"></table>
     </div>
     <div id="tab-keys" class="tab-content">
-      <h3>Chaves Gerenciar</h3>
+      <h3>Gerenciar Keys</h3>
       <form id="keyForm">
         <input type="hidden" id="keyId">
         <input type="text" id="keyKey" placeholder="Key" class="input-field">
@@ -354,19 +354,19 @@ input:checked + .slider:before {
         <select id="keyRole" class="input-field"></select>
         <button type="submit" class="btn-primary">Salvar</button>
         <button type="button" class="btn-ghost" onclick="resetForm('keyForm')">Limpar</button>
-      </formulário>
+      </form>
       <hr class="hr">
       <table class="table-data" id="keysTable"></table>
     </div>
     <div id="tab-custom" class="tab-content">
-      <h3>Personalização de Layout</h3>
+      <h3>CustomizaÃ§Ã£o de Layout</h3>
       <div style="display:grid;gap:8px;">
         <div>
-          <label for="customPrimary" class="small">Cor Primária:</label>
+          <label for="customPrimary" class="small">Cor PrimÃ¡ria:</label>
           <input type="color" id="customPrimary" class="input-field">
         </div>
         <div>
-          <label for="customSecondary" class="small">Cor Secundária:</label>
+          <label for="customSecondary" class="small">Cor SecundÃ¡ria:</label>
           <input type="color" id="customSecondary" class="input-field">
         </div>
         <div>
@@ -377,7 +377,7 @@ input:checked + .slider:before {
       </div>
     </div>
     <div id="tab-settings" class="tab-content">
-      <h3>Configurações e Dados</h3>
+      <h3>ConfiguraÃ§Ãµes e Dados</h3>
       <div>
         <label class="toggle-switch">
           <input type="checkbox" id="storeOpenToggle" onchange="toggleStoreStatus()">
@@ -395,7 +395,7 @@ input:checked + .slider:before {
         <input type="file" id="importFile" style="display:none;" onchange="importData(event)">
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
-        <button class="btn-danger" onclick="resetAllData()">Limpar tudo</button>
+        <button class="btn-danger" onclick="resetAllData()">Limpar Tudo</button>
       </div>
     </div>
   </div>
@@ -403,37 +403,37 @@ input:checked + .slider:before {
   <div class="drawer" id="drawer">
     <h3>Carrinho</h3>
     <div id="cartItems" style="margin-bottom:12px;"></div>
-    <div style="font-weight:bold;margin-top:12px;">Total: R$ <span id="cartSum">0,00</span></div>
+    <div style="font-weight:bold;margin-top:12px;">Total: R$ <span id="cartSum">0.00</span></div>
     <button class="btn-primary" onclick="checkout()">Finalizar pedido</button>
     <button class="btn-ghost" onclick="clearCart()">Limpar</button>
     <button class="btn-ghost" onclick="toggleDrawer()">Fechar</button>
   </div>
 
   <div id="cartFab" onclick="toggleDrawer()">
-    ðŸ›'
+    ðŸ›’
     <div id="cartCount">0</div>
   </div>
 </main>
 <div id="toast" class="toast"></div>
 
 <script>
-/* -------------------- Estado Global e Armazenamento de Dados -------------------- */
+/* -------------------- Global State & Data Storage -------------------- */
 const LS = {PRODS:'mcProds',PEOPLE:'mcPeople',COUPONS:'mcCoupons',KEYS:'mcKeys',CART:'mcCart',PUB:'mcPub',SETUP:'mcSetup',CUSTOM:'mcCustom',ORDERS:'mcOrders'};
-const ESTADO = {
-  usuário: nulo,
-  produtos: [],
-  pessoas: [],
-  cupons: [],
-  teclas: [],
-  carrinho: { itens: [] },
+const STATE = {
+  user: null,
+  products: [],
+  people: [],
+  coupons: [],
+  keys: [],
+  cart: { items: [] },
   pub: [],
-  configuração: { whatsapp: '', últimaAtualização: null, lojaAberta: true },
-  personalizado: { primário: '#FFCC00', secundário: '#DA291C', fundo: '#fff', fonte: 'Inter' },
-  pedidos: [],
-  desfazerHistórico: [],
-  ponteiro de desfazer: -1,
-  categoriaSelecionada: 'Todos',
-  subcategoria selecionada: nula
+  setup: { whatsapp: '', lastUpdate: null, storeOpen: true },
+  custom: { primary: '#FFCC00', secondary: '#DA291C', bg: '#fff', font: 'Inter' },
+  orders: [],
+  undoHistory: [],
+  undoPointer: -1,
+  selectedCategory: 'Todos',
+  selectedSubcategory: null
 };
 
 const KEY_LIMITS = {
@@ -451,38 +451,38 @@ const ROLE_PERMISSIONS = {
   'E': []
 };
 const ADMIN_TABS_CONFIG = {
-  'painel de controle': { nome: 'Painel de controle', função: ['A', 'B'] },
-  'produtos': { nome: 'ðŸ ” Produtos', função: ['A', 'B'] },
-  'pessoas': { nome: 'ðŸ'¤ Pessoas', função: ['A', 'B'] },
-  'cupons': { nome: 'Cupons', função: ['A', 'B'] },
-  'anúncios': { nome: 'ðŸ“¢ Publicidade', função: ['A', 'B'] },
-  'keys': { name: 'ðŸ”' Keys', role: ['A', 'B', 'C'] },
-  'custom': { nome: 'ðŸŽ¨ Personalizar', função: ['A', 'B'] },
-  'settings': { name: 'âš™ï¸ Config', role: ['A', 'B'] },
+  'dashboard': { name: 'Dashboard', role: ['A', 'B'] },
+  'products': { name: 'ðŸ” Produtos', role: ['A', 'B'] },
+  'people': { name: 'ðŸ‘¤ Pessoas', role: ['A', 'B'] },
+  'coupons': { name: 'ðŸ·ï¸ Cupons', role: ['A', 'B'] },
+  'ads': { name: 'ðŸ“¢ Publicidade', role: ['A', 'B'] },
+  'keys': { name: 'ðŸ”‘ Keys', role: ['A', 'B', 'C'] },
+  'custom': { name: 'ðŸŽ¨ Customizar', role: ['A', 'B'] },
+  'settings': { name: 'âš™ï¸ Config', role: ['A', 'B'] },
 };
 
-/* -------------------- Funções utilitárias -------------------- */
+/* -------------------- Utility Functions -------------------- */
 function $(id) { return document.getElementById(id); }
 function lsGet(k) { return JSON.parse(localStorage.getItem(k) || '[]'); }
 function lsSet(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
 function genId() { return Date.now(); }
 function formatMoney(v) { return (v || 0).toFixed(2).replace('.', ','); }
-função toast(msg) {
+function toast(msg) {
   const t = $('toast');
   t.innerText = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3000);
 }
-função recordState() {
-  se (STATE.undoPointer < STATE.undoHistory.length - 1) {
+function recordState() {
+  if (STATE.undoPointer < STATE.undoHistory.length - 1) {
     STATE.undoHistory = STATE.undoHistory.slice(0, STATE.undoPointer + 1);
   }
   const newState = JSON.stringify({ products: STATE.products, people: STATE.people, coupons: STATE.coupons, keys: STATE.keys, orders: STATE.orders, setup: STATE.setup });
-  ESTADO.desfazerHistórico.push(novoEstado);
+  STATE.undoHistory.push(newState);
   STATE.undoPointer = STATE.undoHistory.length - 1;
 }
-função desfazer() {
-  se (STATE.undoPointer > 0) {
+function undo() {
+  if (STATE.undoPointer > 0) {
     STATE.undoPointer--;
     const prevState = JSON.parse(STATE.undoHistory[STATE.undoPointer]);
     STATE.products = prevState.products;
@@ -490,52 +490,52 @@ função desfazer() {
     STATE.coupons = prevState.coupons;
     STATE.keys = prevState.keys;
     STATE.orders = prevState.orders;
-    ESTADO.setup = prevState.setup;
-    salvarTudo();
+    STATE.setup = prevState.setup;
+    saveAll();
     renderAllAdminTables();
-    renderProdutos();
+    renderProducts();
     renderDashboard();
-    brinde('última ação desfeita.');
-  } outro {
+    toast('Ãšltima aÃ§Ã£o desfeita.');
+  } else {
     toast('Nada para desfazer.');
   }
 }
-função podeCriarChave(função) {
-  Se (!STATE.user) retornar falso;
+function canCreateKey(role) {
+  if (!STATE.user) return false;
   const userRole = STATE.user.role;
-  retornar ROLE_PERMISSIONS[userRole].includes(role);
+  return ROLE_PERMISSIONS[userRole].includes(role);
 }
-função hasKeyLimitReached(role) {
-  se (role === 'E') retorne falso;
+function hasKeyLimitReached(role) {
+  if (role === 'E') return false;
   const count = STATE.keys.filter(k => k.role === role).length;
   const keyType = (role === 'A') ? (STATE.keys.find(k => k.role === 'A' && k.key === 'DEVGUI') ? 'A_DEVGUI' : 'A_DEMO') : role;
-  retornar contagem >= KEY_LIMITS[keyType];
+  return count >= KEY_LIMITS[keyType];
 }
 
-/* -------------------- Inicializadores -------------------- */
+/* -------------------- Initializers -------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  carregarTudo();
-  aplicarPersonalizações();
-  se (window.location.hash === '#admin') {
+  loadAll();
+  applyCustomizations();
+  if (window.location.hash === '#admin') {
     const devKey = STATE.keys.find(k => k.key === 'DEVGUI' && k.pass === '###*');
-    se (devKey) {
+    if (devKey) {
       STATE.user = devKey;
       toAdminPanel();
-    } outro {
-      para fazer login();
+    } else {
+      toLogin();
     }
-  } outro {
-    para fazer login();
+  } else {
+    toLogin();
   }
-  renderProdutos();
-  renderCarrinho();
+  renderProducts();
+  renderCart();
   renderSettings();
   renderCategories();
 });
 
-função carregarTudo() {
-  STATE.produtos = lsGet(LS.PRODS);
-  ESTADO.pessoas = lsGet(LS.PESSOAS);
+function loadAll() {
+  STATE.products = lsGet(LS.PRODS);
+  STATE.people = lsGet(LS.PEOPLE);
   STATE.coupons = lsGet(LS.COUPONS);
   STATE.keys = lsGet(LS.KEYS);
   STATE.cart = JSON.parse(localStorage.getItem(LS.CART) || '{"items":[]}');
@@ -544,22 +544,22 @@ função carregarTudo() {
   STATE.custom = JSON.parse(localStorage.getItem(LS.CUSTOM) || JSON.stringify(STATE.custom));
   STATE.orders = lsGet(LS.ORDERS);
 
-  // Insira os dados iniciais se estiverem vazios
-  se (!STATE.keys.length) {
+  // Seed initial data if empty
+  if (!STATE.keys.length) {
     STATE.keys.push({ id: genId(), key: 'DEVGUI', pass: '###*', role: 'A', active: true, unlimited: true });
     STATE.keys.push({ id: genId(), key: 'DEMO', pass: 'DEMO', role: 'A', active: true, unlimited: false });
   }
-  se (!STATE.products.length) {
-    STATE.products.push({ id: genId(), name: 'Cheeseburger', price: 15.00, cat: 'Lanches', subcat: 'SanduÃches', stock: 10, img: 'https://via.placeholder.com/150/DA291C/FFFFFF?text=Cheeseburger', available: true, isCombo: false, isPromotional: false, promoType: null, promoValidity: 0, comboItems: [] });
-    STATE.products.push({ id: genId(), nome: 'Batata Média', preço: 8,00, gato: 'Acompanhamentos', subcat: 'Fritos', estoque: 20, img: 'https://via.placeholder.com/150/FFCC00/000000?text=Batata', disponível: true, isCombo: false, isPromotional: false, promoType: null, promoValidity: 0, comboItems: [] });
+  if (!STATE.products.length) {
+    STATE.products.push({ id: genId(), name: 'Cheeseburger', price: 15.00, cat: 'Lanches', subcat: 'SanduÃ­ches', stock: 10, img: 'https://via.placeholder.com/150/DA291C/FFFFFF?text=Cheeseburger', available: true, isCombo: false, isPromotional: false, promoType: null, promoValidity: 0, comboItems: [] });
+    STATE.products.push({ id: genId(), name: 'Batata MÃ©dia', price: 8.00, cat: 'Acompanhamentos', subcat: 'Fritos', stock: 20, img: 'https://via.placeholder.com/150/FFCC00/000000?text=Batata', available: true, isCombo: false, isPromotional: false, promoType: null, promoValidity: 0, comboItems: [] });
     STATE.products.push({ id: genId(), name: 'Coca-Cola', price: 5.00, cat: 'Bebidas', subcat: 'Refrigerantes', stock: 30, img: 'https://via.placeholder.com/150/000000/FFFFFF?text=Coca-Cola', available: true, isCombo: false, isPromotional: false, promoType: null, promoValidity: 0, comboItems: [] });
   }
-  salvarTudo();
+  saveAll();
 }
-função salvarTudo() {
+function saveAll() {
   lsSet(LS.PRODS, STATE.products);
   lsSet(LS.PEOPLE, STATE.people);
-  lsSet(LS.CUPONS, STATE.coupons);
+  lsSet(LS.COUPONS, STATE.coupons);
   lsSet(LS.KEYS, STATE.keys);
   lsSet(LS.CART, STATE.cart);
   lsSet(LS.PUB, STATE.pub);
@@ -568,32 +568,32 @@ função salvarTudo() {
   lsSet(LS.ORDERS, STATE.orders);
 }
 
-/* -------------------- Renderização de tela e interface do usuário -------------------- */
-função para fazer login() {
-  switchScreen('loginScreen');
-  $('userInfo').innerText = '';
+/* -------------------- Screen & UI Rendering -------------------- */
+function toLogin() { 
+  switchScreen('loginScreen'); 
+  $('userInfo').innerText = ''; 
   $('manageBtn').style.display = 'none';
 }
-função toTotem() {
-  switchScreen('totemScreen');
-  se (ESTADO.usuário && (ESTADO.usuário.função === 'A' || ESTADO.usuário.função === 'B' || ESTADO.usuário.função === 'C')) {
+function toTotem() { 
+  switchScreen('totemScreen'); 
+  if (STATE.user && (STATE.user.role === 'A' || STATE.user.role === 'B' || STATE.user.role === 'C')) {
     $('manageBtn').style.display = 'block';
-  } outro {
+  } else {
     $('manageBtn').style.display = 'none';
   }
 }
-função toAdminPanel() {
-  switchScreen('adminScreen');
-  renderDashboard();
-  renderAllAdminTables();
+function toAdminPanel() { 
+  switchScreen('adminScreen'); 
+  renderDashboard(); 
+  renderAllAdminTables(); 
   renderAdminTabs();
 }
-função switchScreen(screenId) {
+function switchScreen(screenId) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   $(screenId).classList.add('active');
   $('drawer').classList.remove('open');
 }
-função aplicarPersonalizações() {
+function applyCustomizations() {
   document.documentElement.style.setProperty('--color-primary', STATE.custom.primary);
   document.documentElement.style.setProperty('--color-secondary', STATE.custom.secondary);
   document.documentElement.style.setProperty('--bg', STATE.custom.bg);
@@ -602,119 +602,119 @@ função aplicarPersonalizações() {
   $('customSecondary').value = STATE.custom.secondary;
   $('customBg').value = STATE.custom.bg;
 }
-função salvarPersonalizado() {
+function saveCustom() {
   STATE.custom.primary = $('customPrimary').value;
   STATE.custom.secondary = $('customSecondary').value;
   STATE.custom.bg = $('customBg').value;
-  aplicarPersonalizações();
+  applyCustomizations();
   lsSet(LS.CUSTOM, STATE.custom);
   toast('Tema salvo!');
 }
-função renderizarAbaAdministrativas() {
+function renderAdminTabs() {
   const tabsContainer = $('adminTabs');
   tabsContainer.innerHTML = '';
   const userRole = STATE.user ? STATE.user.role : null;
   
-  seja firstTab = nulo;
+  let firstTab = null;
 
-  para (const tabKey em ADMIN_TABS_CONFIG) {
+  for (const tabKey in ADMIN_TABS_CONFIG) {
     const config = ADMIN_TABS_CONFIG[tabKey];
-    se (config.role.include(userRole)) {
+    if (config.role.includes(userRole)) {
       const btn = document.createElement('button');
       btn.className = 'tab-btn';
       btn.dataset.tab = tabKey;
       btn.innerText = config.name;
       btn.onclick = () => {
         document.querySelectorAll('#adminTabs .tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('ativo');
+        btn.classList.add('active');
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         $(`tab-${tabKey}`).classList.add('active');
-        se (tabKey === 'dashboard') renderDashboard();
+        if (tabKey === 'dashboard') renderDashboard();
       };
       tabsContainer.appendChild(btn);
-      se (!primeiraAba) primeiraAba = btn;
+      if (!firstTab) firstTab = btn;
     }
   }
-  se (primeiraaba) {
-    primeiraTab.classList.add('ativo');
+  if (firstTab) {
+    firstTab.classList.add('active');
     $(`tab-${firstTab.dataset.tab}`).classList.add('active');
   }
 }
 
-/* -------------------- Login e Permissões -------------------- */
-função login() {
+/* -------------------- Login & Permissions -------------------- */
+function login() {
   const key = $('loginKey').value.trim();
   const pass = $('loginPass').value.trim();
   const k = STATE.keys.find(k => k.key === key && k.pass === pass && k.active);
-  if (!k) { toast('Tecla inválida'); return; }
-  ESTADO.usuário = k;
+  if (!k) { toast('Key invÃ¡lida'); return; }
+  STATE.user = k;
   $('userInfo').innerText = `Logado: ${k.key} (${k.role})`;
   toTotem();
   toast('Login realizado!');
 }
 
-função registerUser() {
-    se (hasKeyLimitReached('D')) {
-        brinde('Limite de chaves D atingidas.');
-        retornar;
+function registerUser() {
+    if (hasKeyLimitReached('D')) {
+        toast('Limite de chaves D atingido.');
+        return;
     }
     const key = prompt('Escolha sua Key:');
-    if (!key) { toast('Operação cancelada.'); return; }
-    se (STATE.keys.find(k => k.key === key)) {
-        brinde('Esta Key já existe.');
-        retornar;
+    if (!key) { toast('OperaÃ§Ã£o cancelada.'); return; }
+    if (STATE.keys.find(k => k.key === key)) {
+        toast('Esta Key jÃ¡ existe.');
+        return;
     }
     const pass = prompt('Escolha sua senha:');
-    if (!pass) { toast('Operação cancelada.'); return; }
+    if (!pass) { toast('OperaÃ§Ã£o cancelada.'); return; }
     
     const newKey = { id: genId(), key, pass, role: 'D', active: true };
     STATE.keys.push(newKey);
-    salvarTudo();
-    brinde('Cadastro realizado! Agora você pode logar.');
-    $('loginKey').value = chave;
-    $('loginPass').value = senha;
+    saveAll();
+    toast('Cadastro realizado! Agora vocÃª pode logar.');
+    $('loginKey').value = key;
+    $('loginPass').value = pass;
 }
 
-função guestLogin() {
+function guestLogin() {
     const key = 'VISITANTE_' + Date.now().toString().slice(-4);
-    const pass = 'convidado';
+    const pass = 'guest';
     const newKey = { id: genId(), key, pass, role: 'E', active: true };
     STATE.keys.push(newKey);
-    salvarTudo();
-    ESTADO.usuário = novaChave;
+    saveAll();
+    STATE.user = newKey;
     $('userInfo').innerText = `Logado: ${key} (E)`;
     toTotem();
-    brinde('Acesso ao visitante.');
+    toast('Acesso de visitante.');
 }
 
-/* -------------------- Totem e Carrinho -------------------- */
-função renderizarCategorias() {
+/* -------------------- Totem & Cart -------------------- */
+function renderCategories() {
   const categories = ['Todos', ...new Set(STATE.products.filter(p => !p.isCombo).map(p => p.cat))].filter(c => c);
   const catTabs = $('categoryTabs');
   catTabs.innerHTML = '';
   
-  categorias.forEach(cat => {
+  categories.forEach(cat => {
     const btn = document.createElement('div');
     btn.className = `filter-tab ${STATE.selectedCategory === cat ? 'active' : ''}`;
-    btn.innerText = gato;
+    btn.innerText = cat;
     btn.onclick = () => filterProducts(cat);
     catTabs.appendChild(btn);
   });
   
-  se (STATE.selectedCategory && STATE.selectedCategory !== 'Todos') {
+  if (STATE.selectedCategory && STATE.selectedCategory !== 'Todos') {
       renderSubcategories(STATE.selectedCategory);
-  } outro {
+  } else {
       $('subcategoryTabs').style.display = 'none';
   }
 
-  renderProdutos();
+  renderProducts();
 }
-função renderSubcategories(category) {
+function renderSubcategories(category) {
     const subcats = ['Todos', ...new Set(STATE.products.filter(p => p.cat === category && !p.isCombo).map(p => p.subcat))].filter(sc => sc);
     const subcatTabs = $('subcategoryTabs');
     subcatTabs.innerHTML = '';
 
-    if (subcats.length > 1) { // 1 devido a 'Todos'
+    if (subcats.length > 1) { // 1 because of 'Todos'
         subcatTabs.style.display = 'flex';
         subcats.forEach(subcat => {
             const btn = document.createElement('div');
@@ -723,39 +723,39 @@ função renderSubcategories(category) {
             btn.onclick = () => filterProducts(category, subcat);
             subcatTabs.appendChild(btn);
         });
-    } outro {
-        subcatTabs.style.display = 'nenhum';
+    } else {
+        subcatTabs.style.display = 'none';
         STATE.selectedSubcategory = null;
     }
 }
-função filterProducts(category, subcategory = null) {
-  STATE.selectedCategory = categoria;
-  STATE.selectedSubcategory = subcategoria;
+function filterProducts(category, subcategory = null) {
+  STATE.selectedCategory = category;
+  STATE.selectedSubcategory = subcategory;
   
   document.querySelectorAll('#categoryTabs .filter-tab').forEach(b => b.classList.remove('active'));
   document.querySelector(`#categoryTabs .filter-tab[data-category="${category}"]`)?.classList.add('active');
 
-  se (categoria === 'Todos') {
+  if (category === 'Todos') {
     $('subcategoryTabs').style.display = 'none';
-  } outro {
+  } else {
     renderSubcategories(category);
   }
-  renderProdutos();
+  renderProducts();
 }
-função renderizarProdutos() {
+function renderProducts() {
   const grid = $('totemGrid');
   grid.innerHTML = '';
   
   let filteredProducts = STATE.products.filter(p => p.available);
   
-  // Mostrar todos os produtos e combos
-  se (STATE.selectedCategory === 'Todos') {
-    produtosFiltrados = ESTADO.produtos.filter(p => p.disponível);
-  } outro {
-    // Filtrar por categoria e subcategoria
-    produtosFiltrados = produtosFiltrados.filter(p => p.cat === STATE.selectedCategory);
-    se (STATE.selectedSubcategory && STATE.selectedSubcategory !== 'Todos') {
-        produtosFiltrados = produtosFiltrados.filter(p => p.subcat === STATE.selectedSubcategory);
+  // Show all products and combos
+  if (STATE.selectedCategory === 'Todos') {
+    filteredProducts = STATE.products.filter(p => p.available);
+  } else {
+    // Filter by category and subcategory
+    filteredProducts = filteredProducts.filter(p => p.cat === STATE.selectedCategory);
+    if (STATE.selectedSubcategory && STATE.selectedSubcategory !== 'Todos') {
+        filteredProducts = filteredProducts.filter(p => p.subcat === STATE.selectedSubcategory);
     }
   }
 
@@ -763,7 +763,7 @@ função renderizarProdutos() {
     const div = document.createElement('div');
     div.className = 'card-item';
     div.onclick = () => addToCart(p.id);
-    const comboInfo = p.isCombo? 'Combo': '';
+    const comboInfo = p.isCombo ? ' Combo' : '';
     div.innerHTML = `<div class="thumb"><img src="${p.img}" alt="${p.name}"></div>
       <div style="padding:4px;font-weight:bold">${p.name}</div>
       <div style="padding:2px" class="small">R$ ${formatMoney(p.price)}${comboInfo}</div>
@@ -772,95 +772,95 @@ função renderizarProdutos() {
   });
 }
 function toggleDrawer() { $('drawer').classList.toggle('open'); }
-função renderCarrinho() {
-  const lista = $('cartItems');
+function renderCart() {
+  const list = $('cartItems');
   const countEl = $('cartCount');
-  lista.innerHTML = '';
+  list.innerHTML = '';
   if (!STATE.cart.items.length) { list.innerHTML = '<div class="small">Carrinho vazio</div>'; countEl.innerText = '0'; $('cartSum').innerText = formatMoney(0); return; }
-  seja soma = 0;
-  ESTADO.carrinho.itens.paraCada(i => {
-    soma += i.preço * i.quantidade;
+  let sum = 0;
+  STATE.cart.items.forEach(i => {
+    sum += i.price * i.qty;
     const row = document.createElement('div');
-    linha.estilo.exibir = 'flex';
-    row.style.justifyContent = 'espaço-entre';
+    row.style.display = 'flex';
+    row.style.justifyContent = 'space-between';
     row.style.alignItems = 'center';
     row.style.margin = '4px 0';
-    linha.innerHTML = `<span>${i.qty}x ${i.pname}</span>
+    row.innerHTML = `<span>${i.qty}x ${i.pname}</span>
       <div>
         <button class="btn-ghost" onclick="changeCartQty(${i.id},-1)">-</button>
         <button class="btn-ghost" onclick="changeCartQty(${i.id},1)">+</button>
       </div>`;
-    lista.appendChild(linha);
+    list.appendChild(row);
   });
   countEl.innerText = STATE.cart.items.reduce((s, i) => s + i.qty, 0);
-  $('cartSum').innerText = formatMoney(soma);
+  $('cartSum').innerText = formatMoney(sum);
   lsSet(LS.CART, STATE.cart);
 }
-função adicionarAoCarrinho(id) {
-  se (!STATE.setup.storeOpen && (STATE.user.role === 'D' || STATE.user.role === 'E')) {
-    brinde('Loja fechada. Não é possível adicionar itens ao carrinho no momento.');
-    retornar;
+function addToCart(id) {
+  if (!STATE.setup.storeOpen && (STATE.user.role === 'D' || STATE.user.role === 'E')) {
+    toast('Loja fechada. NÃ£o Ã© possÃ­vel adicionar itens ao carrinho no momento.');
+    return;
   }
   
   const p = STATE.products.find(x => x.id == id); if (!p) return;
-  se (p.isCombo) {
+  if (p.isCombo) {
       const allItemsHaveStock = p.comboItems.every(itemId => {
           const item = STATE.products.find(prod => prod.id == itemId);
-          item devolvida && item.estoque > 0;
+          return item && item.stock > 0;
       });
-      se (!todosOsItensTêmEstoque) {
-          brinde(`Um ou mais itens do combo "${p.name}" estão fora de estoque.`);
-          retornar;
+      if (!allItemsHaveStock) {
+          toast(`Um ou mais itens do combo "${p.name}" estÃ£o fora de estoque.`);
+          return;
       }
       p.comboItems.forEach(itemId => {
           const item = STATE.products.find(prod => prod.id == itemId);
-          se (item) item.estoque--;
+          if (item) item.stock--;
       });
-  } senão se (p.stock <= 0) {
-      brinde(`${p.name} está fora de estoque.`);
-      retornar;
-  } outro {
+  } else if (p.stock <= 0) {
+      toast(`${p.name} estÃ¡ fora de estoque.`);
+      return;
+  } else {
       p.stock--;
   }
 
   let item = STATE.cart.items.find(x => x.id == id);
   if (item) { item.qty++; } else { STATE.cart.items.push({ id, pname: p.name, price: p.price, qty: 1, isCombo: p.isCombo, comboItems: p.comboItems }); }
   
-  renderCarrinho();
-  renderProdutos();
-  brinde(`${p.name} adicionado!`);
+  renderCart();
+  renderProducts();
+  toast(`${p.name} adicionado!`);
 }
-função alterarQtdCarrinho(id, ch) {
+function changeCartQty(id, ch) {
   let item = STATE.cart.items.find(x => x.id == id);
-  se (!item) retornar;
+  if (!item) return;
   
   const p = STATE.products.find(x => x.id == id);
-  se (!p) retornar;
+  if (!p) return;
   
-  se (ch > 0 && p.isCombo) {
+  if (ch > 0 && p.isCombo) {
     const allItemsHaveStock = p.comboItems.every(itemId => {
         const item = STATE.products.find(prod => prod.id == itemId);
-        item devolvida && item.estoque > 0;
+        return item && item.stock > 0;
     });
-    se (!todosOsItensTêmEstoque) {
-        brinde(`Um ou mais itens do combo "${p.name}" estão fora de estoque.`);
-        retornar;
+    if (!allItemsHaveStock) {
+        toast(`Um ou mais itens do combo "${p.name}" estÃ£o fora de estoque.`);
+        return;
     }
     p.comboItems.forEach(itemId => {
         const item = STATE.products.find(prod => prod.id == itemId);
-        se (item) item.estoque--;
+        if (item) item.stock--;
     });
-  } senão se (ch > 0 && p.stock <= 0) {
-    brinde(`${p.name} está fora de estoque.`);
-    retornar;
-  } senão se (!p.isCombo) {
+  } else if (ch > 0 && p.stock <= 0) {
+    toast(`${p.name} estÃ¡ fora de estoque.`);
+    return;
+  } else if (!p.isCombo) {
       p.stock -= ch;
   }
 
   item.qty += ch;
   
-  se (item.qty <= 0) {
-      se (item.isCombo) {
+  if (item.qty <= 0) {
+      if (item.isCombo) {
         item.comboItems.forEach(itemId => {
             const indItem = STATE.products.find(prod => prod.id == itemId);
             if(indItem) indItem.stock += 1;
@@ -869,76 +869,76 @@ função alterarQtdCarrinho(id, ch) {
       STATE.cart.items = STATE.cart.items.filter(x => x.id != id);
   }
   
-  renderCarrinho();
-  renderProdutos();
+  renderCart();
+  renderProducts();
 }
-função limparCarrinho() {
-  ESTADO.carrinho.itens.paraCada(item => {
+function clearCart() {
+  STATE.cart.items.forEach(item => {
     const p = STATE.products.find(x => x.id == item.id);
-    se (!p) retornar;
-    se (p.isCombo) {
+    if (!p) return;
+    if (p.isCombo) {
         p.comboItems.forEach(itemId => {
             const indItem = STATE.products.find(prod => prod.id == itemId);
             if(indItem) indItem.stock += item.qty;
         });
-    } outro {
-        p.estoque += item.qtd;
+    } else {
+        p.stock += item.qty;
     }
   });
   STATE.cart.items = [];
-  renderCarrinho();
-  renderProdutos();
-  brinde('Carrinho limpo.');
+  renderCart();
+  renderProducts();
+  toast('Carrinho limpo.');
 }
 
-/* -------------------- Confira -------------------- */
-função checkout() {
+/* -------------------- Checkout -------------------- */
+function checkout() {
   if (!STATE.cart.items.length) { toast('Carrinho vazio'); return; }
-  const telefone = ESTADO.setup.whatsapp;
-  if (!phone) { brinde('WhatsApp não configurado. Por favor, avise o gerente.'); retornar; }
-  const nome = prompt('Seu nome:');
-  if (!name) { brinde('Pedido cancelado.'); retornar; }
+  const phone = STATE.setup.whatsapp;
+  if (!phone) { toast('WhatsApp nÃ£o configurado. Por favor, avise o gerente.'); return; }
+  const name = prompt('Seu nome:');
+  if (!name) { toast('Pedido cancelado.'); return; }
   
-  const ordem = {
+  const order = {
     id: genId(),
-    data: novo Date().toLocaleString(),
-    nome,
-    itens: STATE.cart.items,
+    date: new Date().toLocaleString(),
+    name,
+    items: STATE.cart.items,
     total: STATE.cart.items.reduce((s, i) => s + i.price * i.qty, 0)
   };
   
-  ESTADO.pedidos.push(pedido);
+  STATE.orders.push(order);
   lsSet(LS.ORDERS, STATE.orders);
   
-  let msg = `Olá! Novo pedido de *${name}*:\n\n`;
+  let msg = `OlÃ¡! Novo pedido de *${name}*:\n\n`;
   order.items.forEach(i => { msg += `${i.qty}x ${i.pname} - R$ ${formatMoney(i.price * i.qty)}\n` });
   msg += `\nTotal do pedido: R$ ${formatMoney(order.total)}`;
   
   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
   
   STATE.cart.items = [];
-  renderCarrinho();
-  brinde('Pedido enviado! Aguarde a confirmação.');
+  renderCart();
+  toast('Pedido enviado! Aguarde a confirmaÃ§Ã£o.');
 }
 
-/* -------------------- Painel de Administração - Gerenciamento -------------------- */
-função renderizarTodasAsTabelasAdministrativas() {
-  renderizarTabelaProdutos();
+/* -------------------- Admin Panel Management -------------------- */
+function renderAllAdminTables() {
+  renderProductsTable();
   renderPeopleTable();
-  renderizarTabelaDeCupons();
+  renderCouponsTable();
   renderAdsTable();
   renderKeysTable();
   renderKeyRoleOptions();
 }
 
-função renderizarPainel() {
+function renderDashboard() {
   const summaryEl = $('dashboardSummary');
   const ordersEl = $('ordersList');
   const totalSales = STATE.orders.reduce((s, o) => s + o.total, 0);
   const totalOrders = STATE.orders.length;
-  const vendasDeProdutos = {};
+  const productSales = {};
   STATE.orders.forEach(o => o.items.forEach(i => {
-    vendasDoProduto[i.pname] = (vendasDoProduto[i.pname] || 0) + i.qty;
+    productSales[i.pname] = (productSales[i.pname] || 0) + i.qty;
   }));
   const topProduct = Object.keys(productSales).sort((a, b) => productSales[b] - productSales[a])[0] || 'N/A';
   
@@ -951,7 +951,7 @@ função renderizarPainel() {
   ordersEl.innerHTML = `
     <table class="table-data">
       <thead>
-        <tr><th>ID</th><th>Dados</th><th>Cliente</th><th>Total</th></tr>
+        <tr><th>ID</th><th>Data</th><th>Cliente</th><th>Total</th></tr>
       </thead>
       <tbody>
         ${STATE.orders.reverse().slice(0, 5).map(o => `<tr><td>${o.id}</td><td>${o.date.split(',')[0]}</td><td>${o.name}</td><td>R$ ${formatMoney(o.total)}</td></tr>`).join('')}
@@ -960,8 +960,8 @@ função renderizarPainel() {
   `;
 }
 
-// Produtos
-função toggleComboFields() {
+// Products
+function toggleComboFields() {
     const isCombo = $('isComboToggle').checked;
     $('nonComboFields').style.display = isCombo ? 'none' : 'block';
     $('comboFields').style.display = isCombo ? 'block' : 'none';
@@ -969,54 +969,54 @@ função toggleComboFields() {
     $('prodPrice').required = isCombo ? false : true;
     $('prodCat').required = isCombo ? false : true;
     $('prodStock').required = isCombo ? false : true;
-    $('comboItems').required = isCombo ? verdadeiro: falso;
+    $('comboItems').required = isCombo ? true : false;
 
-    // Redefinir campos promocionais ao ativar/desativar combinação
+    // Reset promo fields when toggling combo
     $('isPromotionalToggle').checked = false;
-    alternarOpçõesPromocionais();
+    togglePromoOptions();
 }
 
-função togglePromoOptions() {
+function togglePromoOptions() {
   const isPromotional = $('isPromotionalToggle').checked;
   const isCombo = $('isComboToggle').checked;
   
-  se (!isCombo) {
-    $('promoOptions').style.display = 'nenhum';
-    $('promoValidity').style.display = 'nenhum';
+  if (!isCombo) {
+    $('promoOptions').style.display = 'none';
+    $('promoValidity').style.display = 'none';
     $('isPromotionalToggle').checked = false;
-    retornar;
+    return;
   }
 
   $('promoOptions').style.display = isPromotional ? 'block' : 'none';
   $('promoValidity').style.display = isPromotional ? 'block' : 'none';
 
-  se (éPromocional) {
+  if (isPromotional) {
     const promoType = document.querySelector('input[name="promoType"]:checked').value;
-    if (promoType === 'mais caro') {
+    if (promoType === 'mais-caro') {
       $('prodPrice').required = false;
-      atualizarPreçoPromocional();
-    } outro {
+      updatePromoPrice();
+    } else {
       $('prodPrice').required = true;
     }
-  } outro {
+  } else {
     $('prodPrice').required = true;
   }
 }
 
-função atualizarPreçoPromocional() {
+function updatePromoPrice() {
   const promoType = document.querySelector('input[name="promoType"]:checked').value;
   const priceInput = $('prodPrice');
   
-  if (promoType === 'mais caro') {
+  if (promoType === 'mais-caro') {
     const comboItems = $('comboItems').value.split(',').map(item => parseInt(item.trim()));
     const prices = comboItems.map(itemId => {
       const item = STATE.products.find(p => p.id === itemId);
-      devolver item ? item.preço : 0;
+      return item ? item.price : 0;
     });
     const maxPrice = Math.max(...prices);
     priceInput.value = maxPrice;
     priceInput.readOnly = true;
-  } outro {
+  } else {
     priceInput.readOnly = false;
   }
 }
@@ -1029,175 +1029,175 @@ $('comboItems').addEventListener('input', updatePromoPrice);
 $('prodForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const id = $('prodId').value;
-  const nome = $('prodName').valor;
+  const name = $('prodName').value;
   const isCombo = $('isComboToggle').checked;
   
   let price, cat, subcat, stock, comboItems, img, isPromotional, promoType, promoValidity;
 
-  se (éCombo) {
+  if (isCombo) {
     comboItems = $('comboItems').value.split(',').map(item => parseInt(item.trim()));
-    se (comboItems.length < 2) {
-      brinde('Um combo deve ter pelo menos 2 produtos.');
-      retornar;
+    if (comboItems.length < 2) {
+      toast('Um combo deve ter pelo menos 2 produtos.');
+      return;
     }
-    gato = 'Combos';
-    subcategoria = '';
-    estoque = 999;
+    cat = 'Combos';
+    subcat = '';
+    stock = 999;
     img = $('prodImg').value || 'https://via.placeholder.com/150/DA291C/FFFFFF?text=Combo';
     isPromotional = $('isPromotionalToggle').checked;
     promoType = isPromotional ? document.querySelector('input[name="promoType"]:checked').value : null;
     promoValidity = isPromotional ? parseInt($('promoValidity').value) : 0;
-    preço = parseFloat($('prodPrice').value);
-  } outro {
-    preço = parseFloat($('prodPrice').value);
-    gato = $('prodCat').valor;
+    price = parseFloat($('prodPrice').value);
+  } else {
+    price = parseFloat($('prodPrice').value);
+    cat = $('prodCat').value;
     subcat = $('prodSubcat').value;
-    estoque = parseInt($('prodStock').value);
+    stock = parseInt($('prodStock').value);
     comboItems = [];
     img = $('prodImg').value || 'https://via.placeholder.com/150';
-    isPromotional = falso;
-    promoType = nulo;
+    isPromotional = false;
+    promoType = null;
     promoValidity = 0;
   }
   
-  const novoItem = {
-    eu fiz ? parseInt(id): genId(),
-    nome,
-    preço,
-    gato,
-    subcategoria,
-    estoque,
-    imagem,
-    disponível: verdadeiro,
-    éCombo,
-    é promocional,
-    Tipo de promoção,
-    Validade da promoção,
-    comboItens
+  const newItem = { 
+    id: id ? parseInt(id) : genId(), 
+    name, 
+    price, 
+    cat, 
+    subcat, 
+    stock, 
+    img, 
+    available: true, 
+    isCombo, 
+    isPromotional, 
+    promoType, 
+    promoValidity, 
+    comboItems 
   };
   
-  se (id) {
+  if (id) {
     const prodIndex = STATE.products.findIndex(p => p.id == id);
-    se (prodIndex !== -1) {
-      STATE.products[prodIndex] = novoItem;
-      toast('Produto!!');
+    if (prodIndex !== -1) {
+      STATE.products[prodIndex] = newItem;
+      toast('Produto atualizado!');
     }
-  } outro {
-    ESTADO.produtos.push(novoItem);
+  } else {
+    STATE.products.push(newItem);
     toast('Produto adicionado!');
   }
-  registrarEstado();
-  salvarTudo();
+  recordState();
+  saveAll();
   resetForm('prodForm');
-  renderizarTabelaProdutos();
-  renderProdutos();
+  renderProductsTable();
+  renderProducts();
   renderCategories();
 });
 
-função renderizarTabelaDeProdutos() {
-  const tabela = $('prodTable');
-  table.innerHTML = `<thead><tr><th>ID</th><th>Nome</th><th>Preço</th><th>Categoria</th><th>Subcategoria</th><th>Estoque</th><th>Combo</th><th>Promoção</th><th>Acessórios</th></tr></thead><tbody>
+function renderProductsTable() {
+  const table = $('prodTable');
+  table.innerHTML = `<thead><tr><th>ID</th><th>Nome</th><th>PreÃ§o</th><th>Cat</th><th>Subcat</th><th>Estoque</th><th>Combo</th><th>Promo</th><th>AÃ§Ãµes</th></tr></thead><tbody>
     ${STATE.products.map(p => {
-        const comboInfo = p.isCombo? `SIM (${p.comboItems.join(', ')})` : 'NÃO';
-        const promoInfo = p.isPromocional? `SIM (${p.promoType})` : 'NÃO';
-        retornar `<tr><td>${p.id}</td><td>${p.name}</td><td>R$ ${formatMoney(p.price)}</td><td>${p.cat || 'N/A'}</td><td>${p.subcat || 'N/A'}</td><td>${p.isCombo ? '---' : p.stock}</td><td>${comboInfo}</td><td>${promoInfo}</td>
+        const comboInfo = p.isCombo ? `SIM (${p.comboItems.join(', ')})` : 'NÃƒO';
+        const promoInfo = p.isPromotional ? `SIM (${p.promoType})` : 'NÃƒO';
+        return `<tr><td>${p.id}</td><td>${p.name}</td><td>R$ ${formatMoney(p.price)}</td><td>${p.cat || 'N/A'}</td><td>${p.subcat || 'N/A'}</td><td>${p.isCombo ? '---' : p.stock}</td><td>${comboInfo}</td><td>${promoInfo}</td>
       <td><button class="btn-ghost" onclick="editItem('products', ${p.id})">Editar</button>
-      <button class="btn-danger" onclick="deleteItem('products', ${p.id})">Excluir</button></td></tr>`;
-    }).juntar('')}
+      <button class="btn-danger" onclick="deleteItem('products', ${p.id})">Del</button></td></tr>`;
+    }).join('')}
   </tbody>`;
 }
 
-// Pessoas
+// People
 $('personForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const id = $('personId').value;
-  const nome = $('personName').valor;
-  const telefone = $('personPhone').value;
-  se (id) {
+  const name = $('personName').value;
+  const phone = $('personPhone').value;
+  if (id) {
     const p = STATE.people.find(x => x.id == id);
-    if (p) { p.nome = nome; p.telefone = telefone; brinde('Pessoa atualizada!'); }
-  } outro {
-    STATE.people.push({ id: genId(), nome, telefone });
-    toast('Pessoa tâmara!');
+    if (p) { p.name = name; p.phone = phone; toast('Pessoa atualizada!'); }
+  } else {
+    STATE.people.push({ id: genId(), name, phone });
+    toast('Pessoa adicionada!');
   }
-  registrarEstado();
-  salvarTudo();
+  recordState();
+  saveAll();
   resetForm('personForm');
   renderPeopleTable();
 });
-função renderizarTabelaPessoas() {
-  const tabela = $('peopleTable');
-  tabela.innerHTML = `<thead><tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Açães</th></tr></thead><tbody>
+function renderPeopleTable() {
+  const table = $('peopleTable');
+  table.innerHTML = `<thead><tr><th>ID</th><th>Nome</th><th>Telefone</th><th>AÃ§Ãµes</th></tr></thead><tbody>
     ${STATE.people.map(p => `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.phone}</td>
       <td><button class="btn-ghost" onclick="editItem('people', ${p.id})">Editar</button>
-      <button class="btn-danger" onclick="deleteItem('people', ${p.id})">Excluir</button></td></tr>`).join('')}
+      <button class="btn-danger" onclick="deleteItem('people', ${p.id})">Del</button></td></tr>`).join('')}
   </tbody>`;
 }
 
-// Cupons
+// Coupons
 $('couponForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const id = $('couponId').value;
   const code = $('couponCode').value;
-  valor const = parseFloat($('couponValue').valor);
-  se (id) {
+  const value = parseFloat($('couponValue').value);
+  if (id) {
     const c = STATE.coupons.find(x => x.id == id);
-    if (c) { c.código = código; c.valor = valor; brinde('Cupom atualizado!'); }
-  } outro {
+    if (c) { c.code = code; c.value = value; toast('Cupom atualizado!'); }
+  } else {
     STATE.coupons.push({ id: genId(), code, value, active: true });
-    brinde('Copo adicionado!');
+    toast('Cupom adicionado!');
   }
-  registrarEstado();
-  salvarTudo();
+  recordState();
+  saveAll();
   resetForm('couponForm');
-  renderizarTabelaDeCupons();
+  renderCouponsTable();
 });
-função renderizarTabelaDeCupons() {
-  const tabela = $('couponsTable');
-  table.innerHTML = `<thead><tr><th>ID</th><th>Código</th><th>Valor</th><th>Açães</th></tr></thead><tbody>
+function renderCouponsTable() {
+  const table = $('couponsTable');
+  table.innerHTML = `<thead><tr><th>ID</th><th>CÃ³digo</th><th>Valor</th><th>AÃ§Ãµes</th></tr></thead><tbody>
     ${STATE.coupons.map(c => `<tr><td>${c.id}</td><td>${c.code}</td><td>R$ ${formatMoney(c.value)}</td>
       <td><button class="btn-ghost" onclick="editItem('coupons', ${c.id})">Editar</button>
-      <button class="btn-danger" onclick="deleteItem('coupons', ${c.id})">Excluir</button></td></tr>`).join('')}
+      <button class="btn-danger" onclick="deleteItem('coupons', ${c.id})">Del</button></td></tr>`).join('')}
   </tbody>`;
 }
 
-// Anúncios
+// Ads
 $('adsForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const id = $('adsId').value;
   const content = $('adsContent').value;
-  se (id) {
+  if (id) {
     const a = STATE.pub.find(x => x.id == id);
-    if (a) { a.content = content; brinde('Anúncio atualizado!'); }
-  } outro {
-    STATE.pub.push({ id: genId(), conteúdo });
-    brinde('Anúncio adicionado!');
+    if (a) { a.content = content; toast('AnÃºncio atualizado!'); }
+  } else {
+    STATE.pub.push({ id: genId(), content });
+    toast('AnÃºncio adicionado!');
   }
-  registrarEstado();
-  salvarTudo();
+  recordState();
+  saveAll();
   resetForm('adsForm');
   renderAdsTable();
 });
-função renderizarTabelaDeAnúncios() {
-  const tabela = $('adsTable');
-  table.innerHTML = `<thead><tr><th>ID</th><th>Conteúdo</th><th>Açães</th></tr></thead><tbody>
+function renderAdsTable() {
+  const table = $('adsTable');
+  table.innerHTML = `<thead><tr><th>ID</th><th>ConteÃºdo</th><th>AÃ§Ãµes</th></tr></thead><tbody>
     ${STATE.pub.map(a => `<tr><td>${a.id}</td><td>${a.content}</td>
       <td><button class="btn-ghost" onclick="editItem('ads', ${a.id})">Editar</button>
-      <button class="btn-danger" onclick="deleteItem('ads', ${a.id})">Excluir</button></td></tr>`).join('')}
+      <button class="btn-danger" onclick="deleteItem('ads', ${a.id})">Del</button></td></tr>`).join('')}
   </tbody>`;
 }
 
-// Teclas
-função renderKeyRoleOptions() {
+// Keys
+function renderKeyRoleOptions() {
   const select = $('keyRole');
   select.innerHTML = '';
   const allowedRoles = ROLE_PERMISSIONS[STATE.user.role];
   allowedRoles.forEach(role => {
-    se (role === 'A' && !STATE.user.unlimited) retorne;
+    if (role === 'A' && !STATE.user.unlimited) return;
     const option = document.createElement('option');
-    option.value = função;
+    option.value = role;
     option.innerText = `Tipo ${role}`;
-    selecionar.appendChild(opção);
+    select.appendChild(option);
   });
 }
 $('keyForm').addEventListener('submit', (e) => {
@@ -1207,60 +1207,60 @@ $('keyForm').addEventListener('submit', (e) => {
   const pass = $('keyPass').value;
   const role = $('keyRole').value;
 
-  se (hasKeyLimitReached(role)) {
-    brinde(`Limite de chaves tipo ${role} atingidas.`);
-    retornar;
+  if (hasKeyLimitReached(role)) {
+    toast(`Limite de chaves tipo ${role} atingido.`);
+    return;
   }
-  se (!canCreateKey(role)) {
-    brinde(`Sua chave não tem permissão para criar chaves do tipo ${role}.`);
-    retornar;
+  if (!canCreateKey(role)) {
+    toast(`Sua chave nÃ£o tem permissÃ£o para criar chaves tipo ${role}.`);
+    return;
   }
 
-  se (id) {
+  if (id) {
     const k = STATE.keys.find(x => x.id == id);
-    if (k) { k.key = key; k.pass = pass; k.role = role; toast('Chave atualizada!'); }
-  } outro {
+    if (k) { k.key = key; k.pass = pass; k.role = role; toast('Key atualizada!'); }
+  } else {
     STATE.keys.push({ id: genId(), key, pass, role, active: true });
-    toast('KeyTag!');
+    toast('Key adicionada!');
   }
-  registrarEstado();
-  salvarTudo();
+  recordState();
+  saveAll();
   resetForm('keyForm');
   renderKeysTable();
 });
-função renderizarTabelaDeChaves() {
-  const tabela = $('keysTable');
-  table.innerHTML = `<thead><tr><th>ID</th><th>Chave</th><th>Função</th><th>Ativa</th><th>Ações</th></tr></thead><tbody>
-    ${STATE.keys.map(k => `<tr><td>${k.id}</td><td>${k.key}</td><td>${k.role}</td><td>${k.active ? 'Sim' : 'Não'}</td>
+function renderKeysTable() {
+  const table = $('keysTable');
+  table.innerHTML = `<thead><tr><th>ID</th><th>Key</th><th>FunÃ§Ã£o</th><th>Ativa</th><th>AÃ§Ãµes</th></tr></thead><tbody>
+    ${STATE.keys.map(k => `<tr><td>${k.id}</td><td>${k.key}</td><td>${k.role}</td><td>${k.active ? 'Sim' : 'NÃ£o'}</td>
       <td><button class="btn-ghost" onclick="editItem('keys', ${k.id})">Editar</button>
-      <button class="btn-danger" onclick="deleteItem('keys', ${k.id})">Excluir</button></td></tr>`).join('')}
+      <button class="btn-danger" onclick="deleteItem('keys', ${k.id})">Del</button></td></tr>`).join('')}
   </tbody>`;
 }
 
-// Editar/Excluir Geral
-função editarItem(entidade, id) {
+// General Edit/Delete
+function editItem(entity, id) {
   const item = STATE[entity].find(x => x.id == id);
-  se (!item) retornar;
+  if (!item) return;
   const form = document.forms[`${entity.slice(0, -1)}Form`];
-  se (!formulário) retornar;
+  if (!form) return;
   
   form.querySelector('input[type="hidden"]').value = item.id;
   
-  se (entidade === 'produtos') {
+  if (entity === 'products') {
     $('isComboToggle').checked = item.isCombo;
     $('isPromotionalToggle').checked = item.isPromotional;
-    se (item.isPromotional) {
+    if (item.isPromotional) {
       document.querySelector(`input[name="promoType"][value="${item.promoType}"]`).checked = true;
       $('promoValidity').value = item.promoValidity;
     }
     
-    se (item.isCombo) {
+    if (item.isCombo) {
       $('comboItems').value = item.comboItems.join(', ');
       $('prodPrice').value = item.price;
       $('prodCat').value = '';
       $('prodSubcat').value = '';
       $('prodStock').value = '';
-    } outro {
+    } else {
       $('prodCat').value = item.cat || '';
       $('prodSubcat').value = item.subcat || '';
       $('prodStock').value = item.stock;
@@ -1268,137 +1268,137 @@ função editarItem(entidade, id) {
       $('comboItems').value = '';
     }
     
-    $('prodName').value = item.nome;
+    $('prodName').value = item.name;
     $('prodImg').value = item.img || '';
 
-    alternarCamposCombinados();
-    alternarOpçõesPromocionais();
-    atualizarPreçoPromocional();
+    toggleComboFields();
+    togglePromoOptions();
+    updatePromoPrice();
     
-  } outro {
-    para (constante chave em item) {
+  } else {
+    for (const key in item) {
       const input = form.querySelector(`#${entity.slice(0, -1)}${key.charAt(0).toUpperCase() + key.slice(1)}`);
-      se (entrada) {
-        se (input.type === 'checkbox') {
+      if (input) {
+        if (input.type === 'checkbox') {
             input.checked = item[key];
         } else if (Array.isArray(item[key])) {
             input.value = item[key].join(', ');
-        } outro {
+        } else {
             input.value = item[key] || '';
         }
       }
     }
   }
   
-  brinde('Item carregado para edição.');
+  toast('Item carregado para ediÃ§Ã£o.');
 }
-função deleteItem(entidade, id) {
+function deleteItem(entity, id) {
   if (confirm('Tem certeza?')) {
-    ESTADO[entidade] = ESTADO[entidade].filter(x => x.id != id);
-    salvarTudo();
+    STATE[entity] = STATE[entity].filter(x => x.id != id);
+    saveAll();
     renderAllAdminTables();
-    renderProdutos();
+    renderProducts();
     renderCategories();
-    registrarEstado();
-    toast('Item excluído!');
+    recordState();
+    toast('Item excluÃ­do!');
   }
 }
-função resetForm(formId) {
+function resetForm(formId) {
   const form = $(formId);
-  formulário.redefinir();
+  form.reset();
   form.querySelector('input[type="hidden"]').value = '';
-  se (formId === 'prodForm') {
+  if (formId === 'prodForm') {
     $('isComboToggle').checked = false;
     $('isPromotionalToggle').checked = false;
-    alternarCamposCombinados();
-    alternarOpçõesPromocionais();
+    toggleComboFields();
+    togglePromoOptions();
   }
 }
 
-// Configurações
-função renderSettings() {
+// Settings
+function renderSettings() {
   $('waPhone').value = STATE.setup.whatsapp;
   $('storeOpenToggle').checked = STATE.setup.storeOpen;
-  $('storeStatusLabel').innerText = STATE.setup.storeOpen? 'Loja Aberta': 'Loja Fechada';
+  $('storeStatusLabel').innerText = STATE.setup.storeOpen ? 'Loja Aberta' : 'Loja Fechada';
 }
-função alternarStatusDaLoja() {
+function toggleStoreStatus() {
   STATE.setup.storeOpen = !STATE.setup.storeOpen;
-  $('storeStatusLabel').innerText = STATE.setup.storeOpen? 'Loja Aberta': 'Loja Fechada';
-  salvarTudo();
-  registrarEstado();
-  brinde(`A loja agora está ${STATE.setup.storeOpen ? 'aberta' : 'fechada'}.`);
+  $('storeStatusLabel').innerText = STATE.setup.storeOpen ? 'Loja Aberta' : 'Loja Fechada';
+  saveAll();
+  recordState();
+  toast(`Loja agora estÃ¡ ${STATE.setup.storeOpen ? 'aberta' : 'fechada'}.`);
 }
-função salvarConfiguração() {
+function saveSetup() {
   STATE.setup.whatsapp = $('waPhone').value;
   lsSet(LS.SETUP, STATE.setup);
-  brinde('Configurações salvas!');
+  toast('ConfiguraÃ§Ãµes salvas!');
 }
 
-// Exportação/Importação de Dados
-função exportarDados() {
+// Data Export/Import
+function exportData() {
   const data = JSON.stringify(STATE, (key, value) => {
-      // Excluir dados temporários/de tempo de execução da exportação
-      se (chave === 'undoHistory' || chave === 'undoPointer' || chave === 'user') {
-          retornar indefinido;
+      // Exclude temporary/runtime data from export
+      if (key === 'undoHistory' || key === 'undoPointer' || key === 'user') {
+          return undefined;
       }
-      valor de retorno;
+      return value;
   }, 2);
   const blob = new Blob([data], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
   a.download = `mcclone_data_${new Date().toISOString()}.json`;
-  a.clique();
+  a.click();
   URL.revokeObjectURL(url);
   toast('Dados exportados!');
 }
-função importData(evento) {
+function importData(event) {
   const file = event.target.files[0];
-  se (!arquivo) retornar;
-  const leitor = novo FileReader();
-  leitor.onload = (e) => {
-    tentar {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
       const importedState = JSON.parse(e.target.result);
-      if (confirm('Importar? Isso substituirá todos os dados atuais.')) {
-        para (const key em importedState) {
-          se (STATE.hasOwnProperty(key) && key !== 'user' && key !== 'undoHistory' && key !== 'undoPointer') {
-            ESTADO[chave] = estadoImportado[chave];
+      if (confirm('Importar? Isso substituirÃ¡ todos os dados atuais.')) {
+        for (const key in importedState) {
+          if (STATE.hasOwnProperty(key) && key !== 'user' && key !== 'undoHistory' && key !== 'undoPointer') {
+            STATE[key] = importedState[key];
           }
         }
-        salvarTudo();
-        carregarTudo();
-        brinde('Dados importados com sucesso!');
+        saveAll();
+        loadAll(); 
+        toast('Dados importados com sucesso!');
         toAdminPanel();
       }
-    } catch (erro) {
-      brinde('Erro ao importar. Arquivo JSON inválido.');
+    } catch (error) {
+      toast('Erro ao importar. Arquivo JSON invÃ¡lido.');
     }
   };
-  leitor.lerComoTexto(arquivo);
+  reader.readAsText(file);
 }
-função resetAllData() {
+function resetAllData() {
   if (confirm('Tem certeza que quer limpar TUDO?')) {
     localStorage.clear();
-    localização.recarregar();
+    location.reload();
   }
 }
 
-// Atalhos Globais
+// Global Shortcuts
 document.addEventListener('keydown', (e) => {
-  se (e.key === 'Escape') {
-    se ($('drawer').classList.contains('open')) {
-      alternarGaveta();
+  if (e.key === 'Escape') {
+    if ($('drawer').classList.contains('open')) {
+      toggleDrawer();
     }
   }
-  se (e.ctrlKey && e.key === 'z') {
+  if (e.ctrlKey && e.key === 'z') {
     e.preventDefault();
-    desfazer();
+    undo();
   }
-  se (e.key === 'F11') {
+  if (e.key === 'F11') {
     e.preventDefault();
-    se (!document.fullscreenElement) {
+    if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
-    } outro {
+    } else {
       document.exitFullscreen();
     }
   }
