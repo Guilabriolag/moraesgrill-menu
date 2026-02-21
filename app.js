@@ -1,39 +1,108 @@
-let totalClicks = 0;
+let dados;
+let carrinho = [];
 
 fetch("data.json")
   .then(res => res.json())
-  .then(data => {
-    const menu = document.getElementById("menu");
-    const whatsappNumber = data.whatsapp;
-
-    data.categories.forEach(category => {
-      const categoryDiv = document.createElement("div");
-      categoryDiv.className = "category";
-
-      const title = document.createElement("h2");
-      title.innerText = category.name;
-      categoryDiv.appendChild(title);
-
-      category.products.forEach(product => {
-        const productDiv = document.createElement("div");
-        productDiv.className = "product";
-
-        productDiv.innerHTML = `
-          <h3>${product.name}</h3>
-          <p class="price">R$ ${product.price.toFixed(2)}</p>
-          <button onclick="order('${product.name}', ${product.price}, '${whatsappNumber}')">Pedir</button>
-        `;
-
-        categoryDiv.appendChild(productDiv);
-      });
-
-      menu.appendChild(categoryDiv);
-    });
+  .then(json => {
+    dados = json;
+    renderCategorias();
+    renderProdutos();
   });
 
-function order(name, price, number) {
-  totalClicks++;
-  const message = `Olá! Gostaria de pedir: ${name} - R$ ${price.toFixed(2)}`;
-  const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+function renderCategorias() {
+  const container = document.getElementById("categorias");
+  dados.categorias.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.textContent = cat.nome;
+    btn.onclick = () => renderProdutos(cat.id);
+    container.appendChild(btn);
+  });
+}
+
+function renderProdutos(categoria = null) {
+  const container = document.getElementById("produtos");
+  container.innerHTML = "";
+
+  dados.produtos
+    .filter(p => p.disponivel)
+    .filter(p => !categoria || p.categoria === categoria)
+    .forEach(prod => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${prod.imagem}">
+        <div class="card-body">
+          <h3>${prod.nome}</h3>
+          <p>${prod.descricao}</p>
+          <strong>${prod.modoVenda === "peso" ? "R$ " + prod.precoKg + "/kg" : "R$ " + prod.preco.toFixed(2)}</strong>
+          <button onclick="adicionar('${prod.id}')">Adicionar</button>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+}
+
+function adicionar(id) {
+  const produto = dados.produtos.find(p => p.id === id);
+
+  let quantidade = 1;
+
+  if (produto.modoVenda === "peso") {
+    const peso = prompt("Digite o peso em KG (ex: 1 ou 0.5):");
+    if (!peso) return;
+    quantidade = parseFloat(peso);
+  }
+
+  carrinho.push({ ...produto, quantidade });
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  document.getElementById("contador").textContent = carrinho.length;
+}
+
+function abrirCarrinho() {
+  const modal = document.getElementById("carrinhoModal");
+  const itensDiv = document.getElementById("itensCarrinho");
+  itensDiv.innerHTML = "";
+
+  let total = 0;
+
+  carrinho.forEach(item => {
+    const valor = item.modoVenda === "peso"
+      ? item.precoKg * item.quantidade
+      : item.preco * item.quantidade;
+
+    total += valor;
+
+    itensDiv.innerHTML += `
+      <p>${item.quantidade}x ${item.nome} - R$ ${valor.toFixed(2)}</p>
+    `;
+  });
+
+  document.getElementById("resumoPedido").innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
+  modal.style.display = "flex";
+}
+
+function finalizarPedido() {
+  let mensagem = "🍖 Pedido - Moraes’s Grill\n\n";
+
+  let total = 0;
+
+  carrinho.forEach(item => {
+    const valor = item.modoVenda === "peso"
+      ? item.precoKg * item.quantidade
+      : item.preco * item.quantidade;
+
+    total += valor;
+    mensagem += `${item.quantidade}x ${item.nome} - R$ ${valor.toFixed(2)}\n`;
+  });
+
+  mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+
+  const numero = dados.unidades[0].whatsapp;
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }
