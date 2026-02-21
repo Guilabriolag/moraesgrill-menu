@@ -2,19 +2,46 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Moraes Grill - Cardápio Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moraes’s Grill</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <img id="logo" src="logo.png" alt="Logo">
-  <h1>Moraes Grill</h1>
+<header class="topbar">
+  <div class="logo">Moraes’s Grill</div>
+  <div class="horario">Domingo das 11:00 às 15:00</div>
 </header>
 
-<main id="menu"></main>
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>Moraes’s Grill</h1>
+    <p>Tradição na brasa. Tem Moraes.</p>
+    <button onclick="scrollToMenu()">Ver Cardápio</button>
+  </div>
+</section>
 
-<a id="whatsapp-float" target="_blank">Pedir no WhatsApp</a>
+<section id="categorias" class="categorias"></section>
+
+<section id="produtos" class="produtos"></section>
+
+<button class="carrinho-btn" onclick="abrirCarrinho()">
+  🛒 <span id="contador">0</span>
+</button>
+
+<div id="carrinhoModal" class="modal">
+  <div class="modal-content">
+    <h2>Seu Pedido</h2>
+    <div id="itensCarrinho"></div>
+    <div id="resumoPedido"></div>
+    <button onclick="finalizarPedido()">Finalizar Pedido</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 Moraes’s Grill <br>
+  by product Labriolag
+</footer>
 
 <script src="app.js"></script>
 </body>
