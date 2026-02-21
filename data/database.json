@@ -1,0 +1,21 @@
+{
+  "bairros": [
+    { "nome": "Alpha 0-6", "taxa": 6 },
+    { "nome": "Alpha 7-12", "taxa": 12 },
+    { "nome": "Tamboré", "taxa": 15 }
+  ],
+  "produtos": [
+    {
+      "id": "arroz",
+      "nome": "Arroz Carreteiro",
+      "descricao": "Tradicional da casa.",
+      "imagem": "",
+      "variacoes": [
+        { "nome": "350ml", "preco": 12 },
+        { "nome": "500ml", "preco": 18 },
+        { "nome": "1000ml", "preco": 30 }
+      ]
+    }
+  ],
+  "vendas": []
+}
