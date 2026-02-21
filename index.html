@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moraes’s Grill</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>MORAESS GRILL</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="logo">Moraes’s Grill</div>
-  <div class="horario">Domingo das 11:00 às 15:00</div>
+  <div id="logo"></div>
+  <button onclick="abrirCarrinho()">🛒 <span id="contador">0</span></button>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-overlay">
-    <h1>MORAESS GRILL</h1>
-    <p>Onde a brasa encontra a perfeição</p>
-    <small>Desde 2019</small>
+    <h1 id="nomeLoja"></h1>
+    <p id="slogan"></p>
+    <small id="desde"></small>
+    <br><br>
     <button onclick="scrollCardapio()">Ver Cardápio</button>
   </div>
 </section>
 
-<section id="categorias" class="categorias"></section>
-
 <section id="produtos" class="produtos"></section>
 
-<button class="carrinho-btn" onclick="abrirCarrinho()">
-  🛒 <span id="contador">0</span>
-</button>
-
-<div id="carrinhoModal" class="modal">
+<div id="modal" class="modal">
   <div class="modal-content">
-    <h2>Seu Pedido</h2>
-    <div id="itensCarrinho"></div>
-    <div id="resumoPedido"></div>
-    <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    <h3>Seu Pedido</h3>
+    <div id="itens"></div>
+    <div id="resumo"></div>
+
+    <select id="tipoEntrega">
+      <option value="retirada">Retirada</option>
+      <option value="delivery">Delivery</option>
+    </select>
+
+    <input id="cep" placeholder="Digite seu CEP">
+    <select id="bairro"></select>
+
+    <select id="pagamento">
+      <option>Pix</option>
+      <option>Crédito</option>
+      <option>Débito</option>
+      <option>Dinheiro</option>
+    </select>
+
+    <input id="troco" placeholder="Troco para quanto? (se dinheiro)">
+
+    <button onclick="finalizar()">Finalizar</button>
+    <button onclick="limpar()">Limpar</button>
+    <button onclick="fechar()">Fechar</button>
   </div>
 </div>
 
-<footer>
-  © 2026 Moraes’s Grill <br>
-  by product Labriolag
-</footer>
-
+<script src="storage.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
