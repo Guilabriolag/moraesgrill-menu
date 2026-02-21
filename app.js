@@ -106,3 +106,8 @@ function finalizarPedido() {
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }
+function scrollCardapio() {
+  document.getElementById("produtos").scrollIntoView({
+    behavior: "smooth"
+  });
+}
