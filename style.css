@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header img {
+  max-width: 120px;
+}
+
+#menu {
+  padding: 20px;
+}
+
+.category {
+  margin-bottom: 30px;
+}
+
+.product {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.product h3 {
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: green;
+}
+
+button {
+  background: #25D366;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+}
