@@ -1,0 +1,27 @@
+{
+  "whatsapp": "5511999999999",
+  "categories": [
+    {
+      "name": "Lanches",
+      "products": [
+        {
+          "name": "X-Burguer",
+          "price": 18.00
+        },
+        {
+          "name": "X-Salada",
+          "price": 20.00
+        }
+      ]
+    },
+    {
+      "name": "Bebidas",
+      "products": [
+        {
+          "name": "Refrigerante Lata",
+          "price": 6.00
+        }
+      ]
+    }
+  ]
+}
