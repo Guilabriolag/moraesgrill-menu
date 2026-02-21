@@ -1,0 +1,18 @@
+{
+  "lojaAtiva": "moraess",
+  "lojas": {
+    "moraess": {
+      "nome": "MORAESS GRILL",
+      "slogan": "Onde a brasa encontra a perfeição",
+      "desde": "2019",
+      "logoUrl": "",
+      "heroUrl": "",
+      "telefone": "5511944907671",
+      "pedidoMinimo": 50,
+      "horario": {
+        "abre": "11:00",
+        "fecha": "22:30"
+      }
+    }
+  }
+}
